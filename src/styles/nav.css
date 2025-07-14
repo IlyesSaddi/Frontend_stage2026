@@ -1,0 +1,39 @@
+nav {
+  width: 100vw;           /* full viewport width */
+  background-color: #222; /* dark background */
+  padding: 0 40px;        /* horizontal padding inside the nav */
+  height: 100px;
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  box-sizing: border-box; /* include padding in width */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;         /* optional: keep navbar fixed on top */
+  
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+h2{
+    color :rgba(41, 197, 249, 0.793);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #61dafb; /* React blue-ish highlight */
+}
