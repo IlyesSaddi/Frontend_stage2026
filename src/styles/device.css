@@ -1,0 +1,26 @@
+.devices-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+  color: #eee;
+}
+
+.device-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.device-card {
+  background: #222;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.device-card h3 {
+  color: #f0a500;
+}

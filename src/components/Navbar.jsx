@@ -7,6 +7,7 @@ function Navbar() {
       <h2>Device Speak</h2>
       <ul className="nav-links">
         <li><Link to="/">Characters</Link></li>
+        <li><Link to="/device">Devices</Link></li>
         <li><Link to="/login">Login</Link></li>
       </ul>
     </nav>

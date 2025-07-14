@@ -9,3 +9,23 @@ export const GET_CHARACTER = gql`
     }
   }
 `;
+
+export const GET_DEVICES  = gql`
+  query GetDevices($clientId: ID!) {
+  devices(clientId: $clientId) {
+    id
+    name
+    gps {
+      lat
+      lon
+    }
+    gyroscope {
+      x
+      y
+      z
+    }
+    simStatus
+  }
+  }`;
+
+

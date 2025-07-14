@@ -3,6 +3,7 @@ import Character from './components/character.jsx';
 import Navbar from './components/Navbar.jsx';
 import Login from './components/Login.jsx';
 import Footer from './components/Footer.jsx';
+import Device from './components/device.jsx';
 import './styles/App.css'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <div className="main-content">
       <Routes>
+        <Route path="/device" element={<Device />}/>
         <Route path="/" element={<Character />} />
         <Route path="/login" element={<Login />} />
       </Routes>
