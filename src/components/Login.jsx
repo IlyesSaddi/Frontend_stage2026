@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import '../styles/login.css'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  
   const [isLogin, setIsLogin] = useState(true);
   
+  const navigate = useNavigate();  // <-- Initialiser navigate ici
 
+  const [message, setMessage] = useState('');
 
   const switchmodehandeler = () => {
       setIsLogin(prevState => !prevState)
@@ -15,67 +18,79 @@ function Login() {
 
 
   const connect = (e) => {
-    e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-    let reqbody;
+  e.preventDefault();
 
-    if (!isLogin){
-      reqbody = {
+  let reqbody;
+
+  if (isLogin) {
+    reqbody = {
       query: `
-        mutation {
-        createUser(inputuser: {email:"${email}", password:"${password}"}){
+        query Login($email: String!, $password: String!) {
+          login(email: $email, password: $password) {
+            userId
+            token
+            tokenExpiration
+            role
+          }
+        }
+      `,
+      variables: { email, password }
+    };
+  } else {
+    reqbody = {
+      query: `
+        mutation CreateUser($email: String!, $password: String!, $role: String!) {
+          createUser(userInput: {email: $email, password: $password, role: $role}) {
             _id
             email
           }
         }
-      `
-    }
-  } else {
-      reqbody = {
-  query: `
-    query Login($email: String!, $password: String!) {
-      login(email: $email, password: $password) {
-        userId
-        token
-        tokenExpiration
-      }
-    }
-  `,
-  variables: {
-    email: email,
-    password: password
+      `,
+      variables: { email, password, role: "client" }
+    };
   }
-};
-
-    }
-
-    
-
-  
 
   fetch('http://localhost:8000/graphql/', {
     method: 'POST',
     body: JSON.stringify(reqbody),
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    headers: { 'Content-Type': 'application/json' }
   })
   .then(res => {
     if (res.status !== 200 && res.status !== 201) {
       throw new Error('Failed request');
     }
-    return res.json();  // très important ici
+    return res.json();
   })
   .then(resData => {
-    console.log(resData);  // ici ça fonctionnera bien
+    if (resData.errors && resData.errors.length > 0) {
+      setMessage("Erreur : " + resData.errors[0].message);
+      return;
+    }
+
+    if (isLogin) {
+      const { token, userId, tokenExpiration, role } = resData.data.login;
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('tokenExpiration', tokenExpiration.toString());
+      localStorage.setItem('role', role);
+
+      navigate('/')
+    } else {
+      setMessage("✅ Compte créé avec succès !");
+      setTimeout(() => {
+        navigate('/');
+      }, 1500);
+    }
   })
   .catch(err => {
-    console.error(err);
+    setMessage("Erreur réseau : " + err.message);
   });
-  }
+};
+
   
   return (
+    <div>
+    {message && <p className="success-message">{message}</p>}
     <form onSubmit={connect}>
       <p>Email:</p>
       <input
@@ -98,6 +113,7 @@ function Login() {
        </button>
       </div>
     </form>
+    </div>
   );
 }
 

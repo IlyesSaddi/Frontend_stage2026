@@ -1,0 +1,59 @@
+.add-company-container {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #1e1e2f;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.add-company-container h2 {
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.add-company-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.add-company-container select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #000000;
+}
+
+.add-company-container button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-company-container button:hover {
+  background-color: #0056b3;
+}
+
+.add-company-container p {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.add-company-container p strong {
+  color: #28a745;
+}

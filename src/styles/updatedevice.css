@@ -1,0 +1,95 @@
+.update-device-form {
+  background: #1b1b1b;  /* bleu très clair */
+  color: #333;           /* texte sombre */
+  padding: 20px 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 25px auto;
+  box-shadow: 0 4px 12px rgba(100, 100, 150, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.update-device-form h3 {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ffffff; /* bleu foncé */
+}
+
+.update-device-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ffffff; /* gris bleuté */
+}
+
+.update-device-form input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1; /* gris clair */
+  border-radius: 8px;
+  color: #2d3748; /* texte foncé */
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+.update-device-form input:focus {
+  outline: none;
+  border-color: #4299e1; /* bleu vif */
+  box-shadow: 0 0 8px rgba(66, 153, 225, 0.4);
+}
+
+.update-device-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #48bb78; /* vert doux */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-device-form button:hover:not(:disabled) {
+  background: #38a169; /* vert un peu plus foncé */
+}
+
+.update-device-form button:disabled {
+  background: #a0aec0; /* gris bleu clair */
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 12px;
+  color: #e53e3e; /* rouge clair */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+
+.update-device-form select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: #444;
+  background-color: #f9f9f9;
+  border: 2px solid #888;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+
+.update-device-form select:focus {
+  border-color: #2a9df4;
+  box-shadow: 0 0 5px #2a9df4;
+  outline: none;
+}

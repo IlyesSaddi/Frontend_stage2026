@@ -1,0 +1,82 @@
+/* Container principal */
+.remove-company-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #240101;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Titre */
+.remove-company-container h3 {
+  margin-bottom: 20px;
+  color: #db251f; /* rouge pour signaler suppression */
+  text-align: center;
+}
+
+/* Messages succès / erreur */
+.success-msg {
+  color: #0c6a22;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.error-msg {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Groupes de formulaire (label + select) */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #f3f3f3;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Bouton */
+.btn-remove {
+  width: 100%;
+  padding: 10px;
+  background-color: #d9534f;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-remove:disabled {
+  background-color: #e6a3a7;
+  cursor: not-allowed;
+}
+
+.btn-remove:hover:not(:disabled) {
+  background-color: #c9302c;
+}

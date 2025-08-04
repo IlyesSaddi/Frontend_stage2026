@@ -71,3 +71,9 @@ form input:focus {
 .button-group button.signup-btn:hover{
     background: #525252;
 }
+
+.success-message {
+  color: green;
+  text-align: center;
+  margin-bottom: 10px;
+}

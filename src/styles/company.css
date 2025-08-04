@@ -1,0 +1,85 @@
+/* styles/companyManager.css */
+
+.company-manager {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.company-manager__title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.company-manager__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.company-manager__input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2d2d3d;
+  color: #fff;
+  font-size: 16px;
+}
+
+.company-manager__input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #4e9eff;
+}
+
+.company-manager__button {
+  padding: 10px;
+  background-color: #4e9eff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.company-manager__button:hover {
+  background-color: #357fd8;
+}
+
+.company-manager__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.company-manager__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d2d3d;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.company-manager__delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.company-manager__delete-button:hover {
+  background-color: #c0392b;
+}

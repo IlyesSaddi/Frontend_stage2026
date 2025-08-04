@@ -1,0 +1,78 @@
+.device-details-container {
+  background: #111;
+  color: #eee;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.device-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 8px;
+  color: #fff;
+}
+
+.device-info {
+  margin-bottom: 25px;
+}
+
+.device-info p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Historique */
+
+.device-history-container {
+  background: #1a1a1a;
+  color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: 1px solid #333;
+}
+
+.device-history-container h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+  color: #fff;
+}
+
+.device-history-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.device-history-container li {
+  background: #222;
+  margin-bottom: 15px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.device-history-container li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.device-history-container li p {
+  margin: 5px 0;
+  font-size: 15px;
+  color: #ddd;
+}
+
+.no-history {
+  color: #aaa;
+  font-style: italic;
+  margin-top: 10px;
+}

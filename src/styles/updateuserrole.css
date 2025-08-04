@@ -1,0 +1,79 @@
+.update-user-role-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #013e544f;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(251, 251, 251, 0.873), 0.1;
+  font-family: Arial, sans-serif;
+}
+
+h3 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.message-success {
+  color: green;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.message-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+select {
+  width: 250px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #0c907c;
+  transition: border-color 0.2s ease;
+}
+
+select:focus {
+  border-color: #007bff;
+}
+
+.btn-update-role {
+  width: 250px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: rgb(242, 255, 0);
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-update-role:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.btn-update-role:disabled {
+  background-color: #10532c;
+  cursor: not-allowed;
+}

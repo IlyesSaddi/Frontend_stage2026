@@ -1,7 +1,22 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:8000/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token');  // récupère token stocké
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    }
+  };
+});
 
 const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql',
+  link: authLink.concat(httpLink),  // on concatène authLink + httpLink
   cache: new InMemoryCache(),
 });
 
