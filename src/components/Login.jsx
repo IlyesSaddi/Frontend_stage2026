@@ -73,6 +73,7 @@ function Login() {
       localStorage.setItem('userId', userId);
       localStorage.setItem('tokenExpiration', tokenExpiration.toString());
       localStorage.setItem('role', role);
+      localStorage.setItem('email',email);
 
       navigate('/')
     } else {

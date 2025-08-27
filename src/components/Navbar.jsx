@@ -6,13 +6,18 @@ function Navbar() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [role, setRole] = useState(null);
+  const [email, setEmail] = useState(null); // <--- état pour le nom/email
+  
 
   useEffect(() => {
     // Vérifie si un token existe au chargement du composant
     const token = localStorage.getItem('token');
     const userRole = localStorage.getItem('role');
+    const name = localStorage.getItem('email');
+    
     setIsLoggedIn(!!token);
     setRole(userRole);
+    setEmail(name || '');
   }, []);
 
   //  met à jour si le token change (bonus)
@@ -20,6 +25,7 @@ function Navbar() {
     const interval = setInterval(() => {
       setIsLoggedIn(!!localStorage.getItem('token'));
       setRole(localStorage.getItem('role'));
+      setEmail(localStorage.getItem('email') || '');
     }, 500); // vérifie toutes les 0.5s
 
     return () => clearInterval(interval);
@@ -28,10 +34,11 @@ function Navbar() {
   return (
     <nav>
       <h2>Device Speak</h2>
+      
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
+
         { isLoggedIn &&(
-        <li><Link to="/device">Devices</Link></li>
+        <li><Link to="/">Devices</Link></li>
         )}
         
         <li><Link to="/downloadzone">Downloads</Link></li>
@@ -41,7 +48,7 @@ function Navbar() {
            </>
         )}
         
-
+        {isLoggedIn && <li>{email}</li>}
         {
           isLoggedIn ? (
             <li><Link to="/logout">Logout</Link></li>
@@ -49,7 +56,7 @@ function Navbar() {
             <li><Link to="/login">Login</Link></li>
           )
         }
-
+      
       </ul>
     </nav>
   );

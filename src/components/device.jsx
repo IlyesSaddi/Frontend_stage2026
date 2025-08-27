@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
+import '../styles/device.css'
 
 const GET_DEVICES = gql`
   query {
@@ -16,13 +17,17 @@ const GET_DEVICES = gql`
 `;
 
 function Device() {
-  const { loading, error, data } = useQuery(GET_DEVICES);
+  const { loading, error, data } = useQuery(GET_DEVICES, {
+    fetchPolicy: 'network-only',
+  });
   const navigate = useNavigate();
 
   if (loading) return <p>Chargement...</p>;
   if (error) return <p>Erreur : {error.message}</p>;
 
-  if (!data.devices.length) return <p>Aucun appareil trouvé.</p>;
+  if (!data || !data.devices || data.devices.length === 0) {
+    return <p>Aucun appareil trouvé.</p>;
+  }
 
   const grouped = data.devices.reduce((acc, device) => {
     const key = device.company?.name || "Sans société";
@@ -37,14 +42,14 @@ function Device() {
         <div key={company}>
           <h2>{company}</h2>
           <div className="device-list">
-            {devices.map(device => (
+            {devices.map((device) => (
               <div
                 key={device._id}
                 className="device-card"
-                onClick={() => navigate(`/device/${device._id}`)}
+                onClick={() => navigate(`/${device._id}`)}
               >
-                <h3>{device.name}</h3>
-                <p>Firmware: {device.firmware_version}</p>
+                <h3>{device.name || "Nom inconnu"}</h3>
+                <p>Firmware: {device.firmware_version || "N/A"}</p>
               </div>
             ))}
           </div>

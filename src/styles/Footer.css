@@ -17,6 +17,8 @@
   flex: 1;
   min-width: 200px;
   margin: 10px;
+  color: rgb(214, 214, 214)
+
 }
 
 .footer-left h3 {
@@ -67,5 +69,4 @@
     justify-content: center;
   }
 }
-
 

@@ -4,7 +4,6 @@ import Loginpage from './pages/LoginPage.jsx';
 import Footer from './components/Footer.jsx';
 import Devicepage from './pages/DevicesPage.jsx';
 import Logoutpage from './pages/Logoutpage.jsx';
-import Home from './pages/Home';
 import Download from './pages/downloadzone.jsx';
 import DeviceDetails from './components/DeviceDetails';
 import Companypage from './pages/compaypage.jsx';
@@ -19,12 +18,11 @@ function App() {
       <Navbar />
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/device" element={<Devicepage />} />
+          <Route path="/" element={<Devicepage />} />
           <Route path="/login" element={<Loginpage />} />
           <Route path="/logout" element={<Logoutpage />} />
           <Route path="/downloadzone" element={<Download />} />
-          <Route path="/device/:id" element={<DeviceDetails />} />
+          <Route path="/:id" element={<DeviceDetails />} />
           <Route path="/company" element ={<Companypage/>}/>
           <Route path="/users" element ={<Userspage/>}/>
           <Route path="/forgot-password" element={<RequestPasswordResetForm />} />
