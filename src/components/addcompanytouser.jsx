@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { gql, useQuery, useMutation } from '@apollo/client';
-import '../styles/addCompanyToUser.css'; // ✅ Import du CSS
+import '../styles/addcompanytouser.css'; // ✅ Import du CSS
 
 const GET_USERS_AND_COMPANIES = gql`
   query {
