@@ -42,6 +42,7 @@ function Navbar() {
         )}
         
         <li><Link to="/downloadzone">Downloads</Link></li>
+        {isLoggedIn && <li><Link to="/ai-tests">Tests IA</Link></li>}
         {isLoggedIn && role !== 'client' && (<>
            <li><Link to="/users">Users</Link></li>
            <li><Link to="/company">companies</Link></li>

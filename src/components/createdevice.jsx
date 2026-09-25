@@ -62,13 +62,15 @@ function Createdevice({ onDeviceCreated }) {
       await createDevice({ variables: { deviceInput: formData } });
     } catch (err) {
       console.error('Create device error', err);
+    } finally {
+      setShowModal(false);
     }
   };
 
   return (
     <div className='device-container'>
-      <button className="btn" onClick={() => setShowModal(true)}>
-        + Create Device
+      <button className="btn-create-device" onClick={() => setShowModal(true)}>
+        + Ajouter un Nouveau Device
       </button>
 
       {showModal && (

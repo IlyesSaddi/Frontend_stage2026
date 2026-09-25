@@ -1,0 +1,139 @@
+.aitests-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #230000;
+  border-radius: 10px;
+}
+
+.aitests-container h2 {
+  text-align: center;
+  color: #bfd71e;
+  margin-bottom: 20px;
+}
+
+.aitests-panel {
+  padding: 15px;
+  background-color: #176b9b;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.aitests-panel h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.aitests-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.aitests-row input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.aitests-btn {
+  padding: 10px 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.aitests-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aitests-btn.resolve {
+  background-color: #10a02b;
+}
+
+.aitests-btn.run {
+  background-color: #e84d0e;
+  padding: 12px 20px;
+}
+
+.aitests-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.aitests-matched {
+  margin: 12px 0;
+  padding: 12px;
+  background-color: #144f2d;
+  color: #d7ffd7;
+  border-radius: 6px;
+  border-left: 4px solid #10a02b;
+}
+
+.aitests-suggestions {
+  margin: 12px 0;
+}
+
+.aitests-suggestions-label {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.aitests-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.aitests-chip {
+  padding: 8px 12px;
+  background-color: #2a2a2a;
+  color: #bfd71e;
+  border: 1px solid #bfd71e;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.aitests-chip:hover {
+  background-color: #bfd71e;
+  color: #1a1a1a;
+}
+
+.aitests-console {
+  margin-top: 20px;
+  background-color: #0d0d0d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.aitests-console-header {
+  padding: 8px 12px;
+  background-color: #1f1f1f;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.aitests-console pre {
+  margin: 0;
+  padding: 12px;
+  max-height: 480px;
+  overflow-y: auto;
+  color: #9fdf9f;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

@@ -10,6 +10,7 @@ import Companypage from './pages/compaypage.jsx';
 import Userspage from './pages/users.jsx';
 import RequestPasswordResetForm from './components/RequestPasswordResetForm.jsx'
 import ResetPasswordForm from './components/ResetPasswordForm.jsx'
+import AiTests from './components/AiTests.jsx'
 import './styles/App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<Loginpage />} />
           <Route path="/logout" element={<Logoutpage />} />
           <Route path="/downloadzone" element={<Download />} />
+          <Route path="/ai-tests" element={<AiTests />} />
           <Route path="/:id" element={<DeviceDetails />} />
           <Route path="/company" element ={<Companypage/>}/>
           <Route path="/users" element ={<Userspage/>}/>
